@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>File Analysis</title>
+  </head>
+  <body>
+    <h1>File Analysis</h1>
+    {% for table in tables %}
+      {{ table|safe }}
+    {% endfor %}
+    <a href="/">Upload another file</a>
+  </body>
+</html>
