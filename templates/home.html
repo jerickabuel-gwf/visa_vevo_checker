@@ -1,63 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Checker</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            max-width: 500px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .file-input {
-            display: none; /* Hide the actual file input */
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1 class="text-center">Visa Checker</h1>
-        <div class="form-group">
-            <label for="filePath">File Path</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="filePath" placeholder="No file selected" readonly>
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="browseBtn">Browse</button>
-                </div>
-            </div>
-            <input type="file" class="file-input" id="fileUpload" />
-        </div>
-        <button class="btn btn-primary btn-block" id="uploadBtn">Upload</button>
-    </div>
-
-    <script>
-        const fileInput = document.getElementById('fileUpload');
-        const filePathInput = document.getElementById('filePath');
-        const browseBtn = document.getElementById('browseBtn');
-
-        // Open the file explorer when the Browse button is clicked
-        browseBtn.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        // Update the file path input when a file is selected
-        fileInput.addEventListener('change', () => {
-            const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file selected';
-            filePathInput.value = fileName;
-        });
-    </script>
-
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Upload File</title>
+  </head>
+  <body>
+    <h1>Upload a CSV file</h1>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+  </body>
 </html>
