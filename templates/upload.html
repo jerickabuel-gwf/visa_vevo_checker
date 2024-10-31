@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DON Visa Bulk Checker</title>
+    <title>Upload File</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Welcome to DON Visa Bulk Checker</h1>
-        <form action="/" method="post" enctype="multipart/form-data">
+        <h1 class="mt-5">Upload Your File</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="file">Choose file</label>
                 <input type="file" class="form-control-file" id="file" name="file">
             </div>
             <button type="submit" class="btn btn-primary">Upload</button>
         </form>
-        {% if filename %}
-        <div class="mt-3">
-            <a href="/download/{{ filename }}" class="btn btn-success">Download Processed File</a>
-        </div>
-        {% endif %}
     </div>
 </body>
 </html>
